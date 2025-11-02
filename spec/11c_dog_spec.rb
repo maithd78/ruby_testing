@@ -35,6 +35,7 @@ end
 
 describe Dog do
   # Create a subject with your choice of dog name and optional breed/color.
+  subject(:lucy) 
 
   # Write a test using the second shared_example to test that dog responds to
   # talk ('WOOF!').
