@@ -154,7 +154,7 @@ describe FindNumber do
     end
 
     context 'when min is 0 and max is 3' do
-      subject(:game_guess_one) {  described_class.new(0, 3, number_guessing) }
+      subject(:game_guess_one) { described_class.new(0, 3, number_guessing) }
       it 'returns 1' do
         guess = game_guess_one.make_guess
         expect(guess).to eql(1)
@@ -162,7 +162,7 @@ describe FindNumber do
     end
 
     context 'when min and max both equal 3' do
-      subject(:game_guess_three) { described_class.new(3,3,number_guessing) }
+      subject(:game_guess_three) { described_class.new(3, 3, number_guessing) }
       it 'returns 3' do
         guess = game_guess_three.make_guess
         expect(guess).to eql(3)
@@ -175,9 +175,8 @@ describe FindNumber do
     context 'when guess and random_number are equal' do
       # Create another subject and random_number double with meaningful names.
       # The subject will need to specify the number value of @guess.
-      let(:guessing_over) { double('random_number', value: 4)}
-      subject(:game_over_true) { described_class.new(2, 6 ,guessing_over, 4) }
- 
+      let(:guessing_over) { double('random_number', value: 4) }
+      subject(:game_over_true) { described_class.new(2, 6, guessing_over, 4) }
 
       # Allow the double to receive 'value' and return the same number as @guess.
 
@@ -197,7 +196,7 @@ describe FindNumber do
     # NOT equal the random_number double's value above.
 
     context 'when guess and random_number are not equal' do
-      let(:guessing_progress) { double('random_number', value: 5)}
+      let(:guessing_progress) { double('random_number', value: 5) }
       subject(:game_over_false) { described_class.new(2, 6, guessing_progress) }
       it 'is not game over' do
         expect(game_over_false).not_to be_game_over
@@ -259,9 +258,6 @@ describe FindNumber do
     # - max updates to one less than the guess
 
     # Write a test for any 'edge cases' that you can think of, for example:
-
-    
-
     context 'when the guess is 7, min=5, and max=8' do
       subject(:edge_guess_game) { described_class.new(5, 8, number_range, 7) }
 
